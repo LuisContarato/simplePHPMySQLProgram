@@ -1,0 +1,32 @@
+body {
+	background-color: #B4FFB0;
+}
+
+textarea{
+	width:300px;
+}
+
+.nome{
+	width:300px;
+}
+.container{
+    clear: both;
+	width: 250px;
+}
+
+.radioButton{
+	height:50px;
+}
+
+tr,
+td,
+th
+{
+	margin: 5px;
+	border: solid 1px black;
+	background: #AD6E92;
+}
+
+table {
+	float:left;
+}
