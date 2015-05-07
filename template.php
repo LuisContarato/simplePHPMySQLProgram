@@ -16,7 +16,7 @@
 					</label>
 				</tr>
 				<tr>
-				<input type="text" name="nome" class = "nome" />
+					<input type="text" name="nome" class = "nome" />
 				</tr>
 				<tr>
 					<label>
@@ -38,44 +38,46 @@
 					<fieldset class = "radioButton">
 						<legend>Prioridade:</legend>
 						<label>
-							<input type="radio" name="prioridade" value="baixa" checked />
-							Baixa
-							<input type="radio" name="prioridade" value="media" />
-							Média
-							<input type="radio" name="prioridade" value="alta" />
-							Alta
+							<input type="radio" name="prioridade" value="1" checked /> Baixa
+							<input type="radio" name="prioridade" value="2" /> Média
+							<input type="radio" name="prioridade" value="3" /> Alta
 						</label>
-					</fieldset>
-				</tr>
-				<tr>
-					<label>
-						Tarefa concluída:
-						<input type="checkbox" name="concluida" value="sim" />
 					</label>
-				</tr>
-				<tr>
-					<input type="submit" value="Cadastrar" />
-				</tr>
-			</table>
-		</fieldset>
-	</form>
-	<table>
-		<tr>
-			<th>Tarefa</th>
-			<th>Descricao</th>
-			<th>Prazo</th>
-			<th>Prioridade</th>
-			<th>Concluída</th>
-		</tr>
-		<?php foreach ($lista_tarefas as $tarefa) : ?>
-			<tr>
-				<td><?php echo $tarefa['nome']; ?> </td>
-				<td><?php echo $tarefa['descricao']; ?> </td>
-				<td><?php echo $tarefa['prazo']; ?> </td>
-				<td><?php echo $tarefa['prioridade']; ?> </td>
-				<td><?php echo $tarefa['concluida']; ?> </td>
+				</fieldset>
 			</tr>
-		<?php endforeach; ?>
-	</table>
+			<tr>
+				<label>
+					Tarefa concluída:
+					<input type="checkbox" name="concluida" value="sim" />
+				</label>
+			</tr>
+			<tr>
+				<input type="submit" value="Cadastrar" />
+			</tr>
+		</table>
+	</fieldset>
+</form>
+<table>
+	<tr>
+		<th>Tarefa</th>
+		<th>Descricao</th>
+		<th>Prazo</th>
+		<th>Prioridade</th>
+		<th>Concluída</th>
+	</tr>
+	<?php foreach ($lista_tarefas as $tarefa) : ?>
+		<tr>
+			<td><?php echo $tarefa['nome']; ?> </td>
+			<td><?php echo $tarefa['descricao']; ?> </td>
+			<td><?php echo $tarefa['prazo']; ?> </td>
+			<td><?php 
+				if ($tarefa['prioridade'] == 1) { echo 'Baixa'; }
+				if ($tarefa['prioridade'] == 2) { echo 'Média'; }
+				if ($tarefa['prioridade'] == 3) { echo 'Alta'; } ?> 
+			</td>
+			<td><?php echo $tarefa['concluida']; ?> </td>
+		</tr>
+	<?php endforeach; ?>
+</table>
 </body>
 </html>
