@@ -48,7 +48,7 @@
 			<tr>
 				<label>
 					Tarefa concluída:
-					<input type="checkbox" name="concluida" value="sim" />
+					<input type="checkbox" name="concluida" value="1" />
 				</label>
 			</tr>
 			<tr>
@@ -69,13 +69,13 @@
 		<tr>
 			<td><?php echo $tarefa['nome']; ?> </td>
 			<td><?php echo $tarefa['descricao']; ?> </td>
-			<td><?php echo $tarefa['prazo']; ?> </td>
+			<td><?php echo traduz_data_para_exibir($tarefa['prazo']); ?> </td>
 			<td><?php 
 				if ($tarefa['prioridade'] == 1) { echo 'Baixa'; }
 				if ($tarefa['prioridade'] == 2) { echo 'Média'; }
 				if ($tarefa['prioridade'] == 3) { echo 'Alta'; } ?> 
 			</td>
-			<td><?php echo $tarefa['concluida']; ?> </td>
+			<td><?php echo traduz_concluida($tarefa['concluida']); ?> </td>
 		</tr>
 	<?php endforeach; ?>
 </table>
